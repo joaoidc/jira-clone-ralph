@@ -1,10 +1,18 @@
-## [2025-04-05 14:30:00] - US-004
+## [2023-04-15 14:30:00] - [US-005]
 Thread: https://ampcode.com/threads/$AMP_CURRENT_THREAD_ID
-- Implementação de autenticação de usuários com endpoints POST /register e POST /login
-- Adição de middleware para proteger endpoints com JWT
-- Criação de modelos e dependências para autenticação
+- Implemented comment creation and retrieval functionality
+- Created /comments/issues/{id} endpoint for comment creation
+- Modified /issues/{id} endpoint to return comments
+- Added Comment model to database
+- Added CommentCreate and CommentResponse schemas
+- Wrote tests for comment functionality
+- Files changed: routes/comments.py, models/comment.py, models/issue.py, schemas/comment.py, tests/test_comments.py
 - **Learnings for future iterations:**
-  - O sistema usa JWT para autenticação e proteção de endpoints
-  - A senha é armazenada como hash usando bcrypt
-  - O token expira após 30 minutos
+  - The codebase uses FastAPI with SQLAlchemy for backend
+  - Authentication is handled via JWT tokens in headers
+  - Database models are defined in models/ directory
+  - Schemas are defined in schemas/ directory
+  - Tests are written in tests/ directory using pytest
+  - Relationships between models are defined using SQLAlchemy's relationship
+  - Endpoints are organized in routes/ directory
 ---
