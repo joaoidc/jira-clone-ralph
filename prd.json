@@ -1,0 +1,80 @@
+{
+  "project": "JiraClone",
+  "branchName": "ralph/jira-clone",
+  "description": "Build a simplified but production-ready Jira clone with projects, issues, workflows, comments, authentication, and sprints.",
+  "testCommand": "pytest -v",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Project creation",
+      "description": "Users can create projects with name, key, and description.",
+      "acceptanceCriteria": [
+        "POST /projects creates a project",
+        "Project has id, name, key, description",
+        "Project key must be unique"
+      ],
+      "priority": 1,
+      "passes": true
+    },
+    {
+      "id": "US-002",
+      "title": "Issue creation",
+      "description": "Users can create issues inside projects.",
+      "acceptanceCriteria": [
+        "POST /projects/{id}/issues creates issue",
+        "Issue has title, description, status",
+        "Default status is 'Backlog'"
+      ],
+      "priority": 2,
+      "passes": true
+    },
+    {
+      "id": "US-003",
+      "title": "Workflow engine",
+      "description": "Issues can move between statuses.",
+      "acceptanceCriteria": [
+        "Valid statuses: Backlog, In Progress, Review, Done",
+        "PATCH /issues/{id}/status updates status",
+        "Invalid transitions return 400"
+      ],
+      "priority": 3,
+      "passes": true
+    },
+    {
+      "id": "US-004",
+      "title": "User authentication",
+      "description": "Users can register and login.",
+      "acceptanceCriteria": [
+        "POST /register creates user",
+        "POST /login returns JWT",
+        "Protected endpoints require token"
+      ],
+      "priority": 4,
+      "passes": true
+    },
+    {
+      "id": "US-005",
+      "title": "Comments on issues",
+      "description": "Users can comment on issues.",
+      "acceptanceCriteria": [
+        "POST /issues/{id}/comments creates comment",
+        "Comments linked to issue and user",
+        "GET /issues/{id} returns comments"
+      ],
+      "priority": 5,
+      "passes": false
+    },
+    {
+      "id": "US-006",
+      "title": "Sprint support",
+      "description": "Create sprints and assign issues.",
+      "acceptanceCriteria": [
+        "POST /sprints creates sprint",
+        "Assign issue to sprint",
+        "GET /sprints/{id} shows issues"
+      ],
+      "priority": 6,
+      "passes": false
+    }
+  ]
+}

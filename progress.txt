@@ -1,0 +1,10 @@
+## [2025-04-05 14:30:00] - US-004
+Thread: https://ampcode.com/threads/$AMP_CURRENT_THREAD_ID
+- Implementação de autenticação de usuários com endpoints POST /register e POST /login
+- Adição de middleware para proteger endpoints com JWT
+- Criação de modelos e dependências para autenticação
+- **Learnings for future iterations:**
+  - O sistema usa JWT para autenticação e proteção de endpoints
+  - A senha é armazenada como hash usando bcrypt
+  - O token expira após 30 minutos
+---
